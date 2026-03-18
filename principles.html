@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESG Principles — KBTU | Kazakh-British Technical University</title>
+<meta name="description" content="KBTU's comprehensive approach to Environmental, Social, and Governance principles from policies to campus transformation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,500;1,9..144,700&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+/* ══════════════════════════════════════════════
+   TOKENS
+══════════════════════════════════════════════ */
+:root {
+  --ink:        #060d1b;
+  --ink-90:     rgba(6,13,27,.9);
+  --ink-60:     rgba(6,13,27,.6);
+  --ink-30:     rgba(6,13,27,.3);
+  --ink-10:     rgba(6,13,27,.1);
+  --off-white:  #f6f5f0;
+  --white:      #ffffff;
+  --navy:       #091d3e;
+  --navy-mid:   #0d2d5e;
+  --navy-lite:  #1648a0;
+  --env:        #0f7a5a;
+  --env-bright: #19a878;
+  --env-pale:   #e4f5ef;
+  --env-glow:   rgba(15,122,90,.2);
+  --soc:        #1553b6;
+  --soc-bright: #2e6fe8;
+  --soc-pale:   #e8effd;
+  --soc-glow:   rgba(21,83,182,.2);
+  --gov:        #b87612;
+  --gov-bright: #e09120;
+  --gov-pale:   #fdf4e3;
+  --gov-glow:   rgba(184,118,18,.2);
+  --gold:       #c9992a;
+  --gold-lite:  #f0c555;
+  --border:     rgba(255,255,255,.1);
+  --border-dark:#e2ddd5;
+  --r-sm: 8px;
+  --r-md: 16px;
+  --r-lg: 24px;
+  --r-xl: 40px;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --spring: cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ══════════════════════════════════════════════
+   RESET
+══════════════════════════════════════════════ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:16px; }
+body {
+  font-family:'Instrument Sans',system-ui,sans-serif;
+  background:var(--ink);
+  color:var(--white);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4 { font-family:'Fraunces',Georgia,serif; line-height:1.1; }
+a { text-decoration:none; color:inherit; }
+img { display:block; max-width:100%; }
+.container { max-width:1160px; margin:0 auto; padding:0 2rem; }
+
+/* ══════════════════════════════════════════════
+   NOISE TEXTURE
+══════════════════════════════════════════════ */
+body::before {
+  content:'';
+  position:fixed; inset:0; z-index:0; pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.5;
+}
+
+/* ══════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════ */
+.site-header {
+  position:sticky; top:0; z-index:200;
+  background:rgba(6,13,27,.88);
+  backdrop-filter:blur(24px) saturate(160%);
+  border-bottom:1px solid var(--border);
+}
+.hdr-inner {
+  display:flex; align-items:center; justify-content:space-between;
+  height:66px; max-width:1160px; margin:0 auto; padding:0 2rem;
+}
+.logo { display:flex; align-items:center; gap:.875rem; width:200px; }
+.logo-mark {
+  width:40px; height:40px; border-radius:var(--r-sm);
+  background:linear-gradient(135deg,var(--env-bright),var(--env));
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Fraunces',serif; color:#fff; font-size:1rem; font-weight:700;
+  flex-shrink:0;
+}
+.logo-words {
+  display:flex; flex-direction:column;
+  font-size:.62rem; font-weight:600; text-transform:uppercase;
+  letter-spacing:.1em; color:rgba(255,255,255,.5); line-height:1.45;
+}
+.logo-words strong { color:rgba(255,255,255,.85); font-size:.68rem; }
+.hdr-nav { display:flex; gap:.25rem; }
+.hdr-nav a {
+  font-size:.8125rem; font-weight:500; color:rgba(255,255,255,.6);
+  padding:.45rem .9rem; border-radius:var(--r-sm);
+  transition:color .25s var(--ease),background .25s var(--ease);
+}
+.hdr-nav a:hover { color:#fff; background:rgba(255,255,255,.07); }
+.hdr-nav a.active { color:#fff; background:rgba(255,255,255,.1); }
+.hdr-right { display:flex; align-items:center; gap:.75rem; }
+.search-bar {
+  display:flex; align-items:center;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.09);
+  border-radius:var(--r-sm); overflow:hidden;
+}
+.search-bar input {
+  background:transparent; border:none; outline:none;
+  color:#fff; font:inherit; font-size:.8125rem;
+  padding:.38rem .75rem; width:130px;
+}
+.search-bar input::placeholder { color:rgba(255,255,255,.35); }
+.search-bar button {
+  background:transparent; border:none; cursor:pointer;
+  color:rgba(255,255,255,.5); padding:.38rem .7rem; font-size:.875rem;
+  transition:color .2s;
+}
+.search-bar button:hover { color:#fff; }
+.lang-sw { display:flex; gap:2px; }
+.lang-sw button {
+  background:transparent; border:none; cursor:pointer;
+  font:inherit; font-size:.72rem; font-weight:700; text-transform:uppercase;
+  color:rgba(255,255,255,.4); padding:.28rem .48rem; border-radius:4px;
+  transition:all .2s;
+}
+.lang-sw button.on,.lang-sw button:hover { color:#fff; background:rgba(255,255,255,.1); }
+.mob-btn {
+  display:none; background:none; border:none; color:#fff;
+  font-size:1.4rem; cursor:pointer; padding:.25rem;
+  width:36px; height:36px; align-items:center; justify-content:center;
+  border-radius:6px; transition:background .25s;
+  z-index:301; position:relative;
+}
+.mob-btn:hover { background:rgba(255,255,255,.1); }
+
+/* ══════════════════════════════════════════════
+   MOBILE DRAWER
+══════════════════════════════════════════════ */
+.mobile-drawer {
+  display:none;
+  position:fixed; top:0; left:0; right:0; bottom:0; z-index:300;
+}
+.mobile-drawer.open { display:block; }
+.drawer-backdrop {
+  position:absolute; inset:0;
+  background:rgba(4,10,20,.75);
+  backdrop-filter:blur(4px);
+  animation:fadeIn .25s ease;
+}
+.drawer-panel {
+  position:absolute; top:0; right:0;
+  width:min(320px,88vw); height:100%;
+  background:var(--navy);
+  box-shadow:-8px 0 48px rgba(0,0,0,.5);
+  display:flex; flex-direction:column;
+  animation:slideIn .28s cubic-bezier(.4,0,.2,1);
+  overflow-y:auto;
+}
+.drawer-head {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.25rem 1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.drawer-logo {
+  font-family:'Fraunces',serif; color:#fff;
+  font-size:1rem; font-weight:700; letter-spacing:.01em;
+}
+.drawer-close {
+  background:rgba(255,255,255,.08); border:none; cursor:pointer;
+  color:#fff; width:34px; height:34px; border-radius:8px;
+  font-size:1.125rem; display:flex; align-items:center; justify-content:center;
+  transition:background .2s;
+}
+.drawer-close:hover { background:rgba(255,255,255,.16); }
+.drawer-search {
+  padding:1rem 1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.drawer-search input {
+  width:100%; padding:.75rem 1rem;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:var(--r-sm);
+  color:#fff; font:inherit; font-size:.9rem; outline:none;
+  transition:border-color .2s;
+}
+.drawer-search input::placeholder { color:rgba(255,255,255,.35); }
+.drawer-search input:focus { border-color:var(--env-bright); }
+.drawer-nav {
+  display:flex; flex-direction:column;
+  padding:.75rem 0;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.drawer-nav a {
+  color:rgba(255,255,255,.75); font-size:.9375rem; font-weight:500;
+  padding:.875rem 1.5rem;
+  border-left:3px solid transparent;
+  transition:background .2s, color .2s, border-color .2s;
+}
+.drawer-nav a:hover,
+.drawer-nav a.active {
+  color:#fff; background:rgba(255,255,255,.06);
+  border-left-color:var(--env-bright);
+}
+.drawer-lang {
+  display:flex; gap:.5rem;
+  padding:1.25rem 1.5rem;
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.drawer-lang button {
+  flex:1; background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  cursor:pointer; color:rgba(255,255,255,.55);
+  font:inherit; font-size:.875rem; font-weight:700;
+  padding:.6rem; border-radius:8px; text-transform:uppercase;
+  transition:all .2s;
+}
+.drawer-lang button.on,
+.drawer-lang button:hover {
+  color:#fff; background:var(--env); border-color:var(--env-bright);
+}
+.drawer-cta {
+  padding:1.5rem;
+}
+.drawer-cta a {
+  display:flex; align-items:center; justify-content:center; gap:.5rem;
+  background:linear-gradient(135deg,var(--env-bright),var(--env));
+  color:#fff; padding:.875rem; border-radius:var(--r-md);
+  font-weight:600; font-size:.9375rem;
+  box-shadow:0 6px 20px var(--env-glow);
+}
+
+@keyframes fadeIn  { from{opacity:0} to{opacity:1} }
+@keyframes slideIn { from{transform:translateX(100%)} to{transform:translateX(0)} }
+
+/* ══════════════════════════════════════════════
+   BREADCRUMB
+══════════════════════════════════════════════ */
+.crumb {
+  background:rgba(255,255,255,.03);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:.6rem 0; font-size:.78rem; color:rgba(255,255,255,.4);
+}
+.crumb-inner {
+  display:flex; align-items:center; gap:.5rem;
+  max-width:1160px; margin:0 auto; padding:0 2rem;
+}
+.crumb a { transition:color .2s; }
+.crumb a:hover { color:rgba(255,255,255,.8); }
+.crumb .sep { opacity:.3; }
+.crumb .cur { color:rgba(255,255,255,.75); font-weight:500; }
+
+/* ══════════════════════════════════════════════
+   HERO
+══════════════════════════════════════════════ */
+.hero {
+  position:relative; min-height:100vh; display:flex; align-items:center;
+  overflow:hidden;
+}
+.hero-mesh {
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(ellipse 80% 80% at 65% 40%, rgba(15,122,90,.28) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 60% at 10% 70%, rgba(21,83,182,.22) 0%, transparent 50%),
+    radial-gradient(ellipse 50% 60% at 80% 80%, rgba(184,118,18,.14) 0%, transparent 45%),
+    linear-gradient(160deg, #080f20 0%, #060d1b 100%);
+  animation:meshShift 14s ease-in-out infinite alternate;
+}
+@keyframes meshShift {
+  0%   { filter:hue-rotate(0deg); }
+  100% { filter:hue-rotate(12deg); }
+}
+.hero::before {
+  content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:72px 72px;
+}
+.hero-letters {
+  position:absolute; right:-2vw; top:50%; transform:translateY(-50%);
+  z-index:1; pointer-events:none;
+  display:flex; flex-direction:column; gap:.5rem;
+  font-family:'Fraunces',serif; font-size:clamp(6rem,14vw,14rem);
+  font-weight:900; line-height:.9; color:transparent;
+  -webkit-text-stroke:1px rgba(255,255,255,.06);
+  user-select:none;
+}
+.hero-layout {
+  position:relative; z-index:5;
+  max-width:1160px; margin:0 auto; padding:7rem 2rem 6rem;
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:5rem; align-items:center; width:100%;
+}
+.hero-left { animation:hIn .9s var(--ease) both; }
+@keyframes hIn { from{opacity:0;transform:translateX(-36px)} to{opacity:1;transform:none} }
+
+.hero-overline {
+  display:inline-flex; align-items:center; gap:.625rem;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.06);
+  backdrop-filter:blur(8px);
+  padding:.38rem 1rem .38rem .48rem;
+  border-radius:9999px; margin-bottom:2rem;
+}
+.hero-overline-pill {
+  background:linear-gradient(135deg,var(--env-bright),var(--env));
+  color:#fff; font-size:.65rem; font-weight:700; text-transform:uppercase;
+  letter-spacing:.1em; padding:.28rem .7rem; border-radius:9999px;
+}
+.hero-overline span { font-size:.8rem; color:rgba(255,255,255,.6); font-weight:500; }
+.hero h1 {
+  font-size:clamp(2.75rem,5.5vw,4.25rem);
+  font-weight:700; letter-spacing:-.02em; line-height:1.05;
+  margin-bottom:1.5rem;
+}
+.hero h1 em { font-style:italic; font-weight:300; color:var(--env-bright); }
+.hero-desc {
+  font-size:1.0625rem; color:rgba(255,255,255,.65);
+  line-height:1.8; max-width:480px; margin-bottom:2.5rem;
+}
+.hero-cta { display:flex; gap:1rem; flex-wrap:wrap; }
+.btn-green {
+  display:inline-flex; align-items:center; gap:.625rem;
+  background:linear-gradient(135deg,var(--env-bright),var(--env));
+  color:#fff; padding:.875rem 2rem; border-radius:var(--r-md);
+  font-weight:600; font-size:.9375rem;
+  box-shadow:0 8px 28px var(--env-glow);
+  transition:transform .3s var(--spring),box-shadow .3s var(--ease);
+}
+.btn-green:hover { transform:translateY(-3px); box-shadow:0 14px 36px var(--env-glow); }
+.btn-ghost {
+  display:inline-flex; align-items:center; gap:.625rem;
+  border:1px solid rgba(255,255,255,.18); color:rgba(255,255,255,.85);
+  background:rgba(255,255,255,.06); padding:.875rem 1.75rem;
+  border-radius:var(--r-md); font-weight:500; font-size:.9375rem;
+  transition:background .25s,border-color .25s;
+}
+.btn-ghost:hover { background:rgba(255,255,255,.12); border-color:rgba(255,255,255,.3); }
+.hero-pillars { display:flex; gap:.875rem; margin-top:2.5rem; flex-wrap:wrap; }
+.hero-pillar {
+  display:flex; align-items:center; gap:.5rem;
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1);
+  padding:.45rem 1rem; border-radius:9999px; font-size:.8125rem; font-weight:600;
+}
+.hp-dot { width:8px; height:8px; border-radius:50%; flex-shrink:0; }
+.hero-right {
+  position:relative; animation:hImgIn 1.1s .2s var(--ease) both;
+}
+@keyframes hImgIn { from{opacity:0;transform:translateX(36px)} to{opacity:1;transform:none} }
+.hero-img-main {
+  width:100%; height:520px; object-fit:cover;
+  border-radius:var(--r-lg);
+  box-shadow:0 40px 100px rgba(0,0,0,.6);
+  border:1px solid rgba(255,255,255,.07);
+}
+.hero-img-card {
+  position:absolute; bottom:-28px; left:-32px;
+  width:200px; height:140px; object-fit:cover;
+  border-radius:var(--r-md);
+  border:3px solid rgba(255,255,255,.1);
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+.hero-stat-card {
+  position:absolute; top:32px; left:-48px;
+  background:rgba(255,255,255,.08); backdrop-filter:blur(20px);
+  border:1px solid rgba(255,255,255,.14); border-radius:var(--r-md);
+  padding:1.125rem 1.375rem;
+  display:flex; flex-direction:column; gap:.25rem;
+  animation:floatY 5s ease-in-out infinite;
+}
+@keyframes floatY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+.hsc-num { font-family:'Fraunces',serif; font-size:2rem; font-weight:700; color:var(--env-bright); line-height:1; }
+.hsc-label { font-size:.72rem; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:rgba(255,255,255,.5); }
+
+/* ══════════════════════════════════════════════
+   STATS BAND
+══════════════════════════════════════════════ */
+.stats-band {
+  background:rgba(255,255,255,.035);
+  border-top:1px solid rgba(255,255,255,.06);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  padding:3rem 0;
+}
+.stats-inner {
+  max-width:1160px; margin:0 auto; padding:0 2rem;
+  display:grid; grid-template-columns:repeat(4,1fr);
+  gap:1px; background:rgba(255,255,255,.06);
+  border-radius:var(--r-md); overflow:hidden;
+}
+.stat-item {
+  background:var(--ink); padding:2rem 1.5rem; text-align:center; position:relative;
+}
+.stat-item::after {
+  content:''; position:absolute; bottom:0; left:50%; transform:translateX(-50%);
+  width:0; height:2px;
+  background:linear-gradient(90deg,var(--env-bright),var(--soc-bright));
+  transition:width .6s var(--ease);
+}
+.stat-item:hover::after { width:60%; }
+.stat-num { font-family:'Fraunces',serif; font-size:3rem; font-weight:700; line-height:1; color:#fff; display:block; }
+.stat-unit { color:var(--env-bright); }
+.stat-lbl { font-size:.8125rem; font-weight:500; color:rgba(255,255,255,.5); margin-top:.5rem; text-transform:uppercase; letter-spacing:.07em; }
+
+/* ══════════════════════════════════════════════
+   SECTION COMMON
+══════════════════════════════════════════════ */
+.section { padding:7rem 0; position:relative; }
+.sec-tag {
+  display:inline-block; font-size:.72rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.12em; color:var(--env-bright);
+  border:1px solid var(--env-glow); background:rgba(25,168,120,.08);
+  padding:.35rem .875rem; border-radius:9999px; margin-bottom:1.25rem;
+}
+.sec-h { font-size:clamp(2rem,3.5vw,3rem); font-weight:700; letter-spacing:-.02em; margin-bottom:1rem; }
+.sec-sub { font-size:1.0625rem; color:rgba(255,255,255,.55); max-width:580px; line-height:1.8; }
+.center { text-align:center; }
+.center .sec-sub { margin:0 auto; }
+
+/* ══════════════════════════════════════════════
+   ABOUT SECTION
+══════════════════════════════════════════════ */
+.about-section { background:var(--off-white); color:var(--ink); padding:7rem 0; }
+.about-inner {
+  max-width:1160px; margin:0 auto; padding:0 2rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+}
+.about-text .sec-tag { color:var(--env); border-color:var(--env-glow); background:var(--env-pale); }
+.about-text .sec-h { color:var(--ink); }
+.about-text p { font-size:1.0625rem; color:rgba(6,13,27,.65); line-height:1.85; margin-bottom:1.5rem; }
+.about-text p strong { color:var(--ink); font-weight:600; }
+.about-img-col { position:relative; }
+.about-img { width:100%; height:460px; object-fit:cover; border-radius:var(--r-lg); box-shadow:0 32px 80px rgba(6,13,27,.18); }
+.about-accent {
+  position:absolute; bottom:-20px; right:-20px;
+  background:var(--navy); border-radius:var(--r-md);
+  padding:1.5rem 1.875rem; box-shadow:0 20px 60px rgba(6,13,27,.35);
+}
+.about-accent-n { font-family:'Fraunces',serif; font-size:2.25rem; color:var(--env-bright); font-weight:700; line-height:1; }
+.about-accent-t { font-size:.75rem; color:rgba(255,255,255,.6); margin-top:.375rem; line-height:1.5; }
+
+/* ══════════════════════════════════════════════
+   PILLARS
+══════════════════════════════════════════════ */
+.pillars-section { background:var(--ink); }
+.pillars-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:4rem; }
+.pillar-card {
+  border-radius:var(--r-lg); overflow:hidden;
+  border:1px solid rgba(255,255,255,.08); position:relative;
+  transition:transform .4s var(--spring),box-shadow .4s var(--ease);
+}
+.pillar-card:hover { transform:translateY(-8px); box-shadow:0 32px 80px rgba(0,0,0,.4); }
+.pillar-top { height:200px; position:relative; overflow:hidden; }
+.pillar-img { width:100%; height:100%; object-fit:cover; transition:transform .6s var(--ease); }
+.pillar-card:hover .pillar-img { transform:scale(1.06); }
+.pillar-overlay { position:absolute; inset:0; display:flex; align-items:flex-end; padding:1.5rem; }
+.pillar-icon-wrap {
+  width:52px; height:52px; border-radius:var(--r-sm);
+  display:flex; align-items:center; justify-content:center; font-size:1.5rem;
+  backdrop-filter:blur(12px); border:1px solid rgba(255,255,255,.2);
+}
+.pillar-body { background:rgba(255,255,255,.04); padding:1.75rem; }
+.pillar-label { font-size:.68rem; font-weight:700; text-transform:uppercase; letter-spacing:.14em; margin-bottom:.625rem; }
+.pillar-card h3 { font-size:1.375rem; font-weight:700; margin-bottom:.875rem; }
+.pillar-card p { font-size:.9375rem; color:rgba(255,255,255,.6); line-height:1.75; }
+.pillar-env .pillar-overlay { background:linear-gradient(to top, rgba(15,122,90,.7),transparent); }
+.pillar-env .pillar-icon-wrap { background:rgba(15,122,90,.5); }
+.pillar-env .pillar-label { color:var(--env-bright); }
+.pillar-env .pillar-body { border-top:2px solid var(--env); }
+.pillar-soc .pillar-overlay { background:linear-gradient(to top, rgba(21,83,182,.7),transparent); }
+.pillar-soc .pillar-icon-wrap { background:rgba(21,83,182,.5); }
+.pillar-soc .pillar-label { color:var(--soc-bright); }
+.pillar-soc .pillar-body { border-top:2px solid var(--soc); }
+.pillar-gov .pillar-overlay { background:linear-gradient(to top, rgba(184,118,18,.7),transparent); }
+.pillar-gov .pillar-icon-wrap { background:rgba(184,118,18,.5); }
+.pillar-gov .pillar-label { color:var(--gov-bright); }
+.pillar-gov .pillar-body { border-top:2px solid var(--gov); }
+
+/* ══════════════════════════════════════════════
+   POLICIES SECTION
+══════════════════════════════════════════════ */
+.policies-section { background:var(--off-white); color:var(--ink); }
+.policies-section .sec-tag { color:var(--env); background:var(--env-pale); border-color:transparent; }
+.policies-section .sec-h { color:var(--ink); }
+.policies-section .sec-sub { color:var(--ink-60); }
+.policies-lead { font-size:1.0625rem; color:var(--ink-60); line-height:1.8; max-width:720px; margin:0 auto 3rem; text-align:center; }
+.policy-list { max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:.75rem; }
+.policy-item {
+  background:#fff; border:1px solid var(--border-dark);
+  border-radius:var(--r-md); overflow:hidden;
+  box-shadow:0 2px 8px rgba(6,13,27,.05);
+  transition:box-shadow .25s;
+}
+.policy-item:hover { box-shadow:0 6px 24px rgba(6,13,27,.1); }
+.policy-btn {
+  width:100%; display:flex; align-items:center;
+  justify-content:space-between; gap:1rem;
+  padding:1.125rem 1.5rem;
+  background:transparent; border:none; cursor:pointer; font:inherit; text-align:left;
+}
+.policy-btn-left { display:flex; align-items:center; gap:.875rem; }
+.policy-num {
+  width:28px; height:28px; border-radius:50%; flex-shrink:0;
+  background:var(--env-pale); color:var(--env);
+  font-size:.72rem; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.policy-name { font-weight:600; font-size:.9375rem; color:var(--ink); }
+.policy-chev { width:20px; height:20px; flex-shrink:0; color:var(--ink-30); transition:transform .3s var(--ease),color .2s; }
+.policy-item.open .policy-chev { transform:rotate(180deg); color:var(--env); }
+.policy-detail { max-height:0; overflow:hidden; transition:max-height .4s var(--ease); }
+.policy-detail-inner {
+  padding:.25rem 1.5rem 1.125rem 4.125rem;
+  font-size:.9rem; color:var(--ink-60); line-height:1.75;
+  border-top:1px solid var(--border-dark);
+}
+
+/* ══════════════════════════════════════════════
+   COMMITMENTS
+══════════════════════════════════════════════ */
+.commitments-section { background:var(--ink); padding:7rem 0; }
+.commitments-inner {
+  max-width:1160px; margin:0 auto; padding:0 2rem;
+  display:grid; grid-template-columns:5fr 7fr; gap:5rem; align-items:start;
+}
+.commitments-sticky { position:sticky; top:100px; }
+.commitments-sticky .sec-sub { color:rgba(255,255,255,.55); }
+.commit-visual { margin-top:2.5rem; border-radius:var(--r-lg); overflow:hidden; border:1px solid rgba(255,255,255,.07); }
+.commit-vis-img { width:100%; height:280px; object-fit:cover; display:block; }
+.journey {
+  display:flex; flex-direction:column;
+  padding-left:1px; border-left:1px solid rgba(255,255,255,.1);
+}
+.journey-item {
+  display:flex; gap:1.75rem; padding:0 0 3rem 2.5rem; position:relative;
+}
+.journey-item:last-child { padding-bottom:0; }
+.journey-item::before {
+  content:''; position:absolute; left:-7px; top:1.5rem;
+  width:13px; height:13px; border-radius:50%;
+  background:var(--ink); border:2px solid rgba(255,255,255,.2);
+  transition:border-color .3s,background .3s;
+}
+.journey-item:hover::before { border-color:var(--env-bright); background:var(--env-bright); }
+.j-icon {
+  width:52px; height:52px; border-radius:var(--r-sm); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:1.375rem;
+  border:1px solid rgba(255,255,255,.09); background:rgba(255,255,255,.04);
+  transition:background .3s,border-color .3s,transform .3s var(--spring);
+}
+.journey-item:hover .j-icon { background:rgba(25,168,120,.15); border-color:var(--env); transform:scale(1.08); }
+.j-title { font-size:1.125rem; font-weight:700; font-family:'Fraunces',serif; margin-bottom:.5rem; color:#fff; }
+.j-desc { font-size:.9375rem; color:rgba(255,255,255,.55); line-height:1.75; }
+
+/* ══════════════════════════════════════════════
+   CTA BANNER
+══════════════════════════════════════════════ */
+.cta-banner {
+  position:relative; padding:7rem 0; overflow:hidden;
+  background:linear-gradient(160deg,var(--navy-mid) 0%,var(--navy) 60%,#061228 100%);
+}
+.cta-mesh {
+  position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(ellipse 70% 80% at 80% 50%, rgba(15,122,90,.22) 0%,transparent 55%),
+    radial-gradient(ellipse 50% 50% at 10% 30%, rgba(21,83,182,.15) 0%,transparent 50%);
+}
+.cta-grid-lines {
+  position:absolute; inset:0; pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+  background-size:60px 60px;
+}
+.cta-inner {
+  position:relative; z-index:5;
+  max-width:1160px; margin:0 auto; padding:0 2rem;
+  display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;
+}
+.cta-text .sec-sub { color:rgba(255,255,255,.6); }
+.cta-features { margin-top:2rem; display:flex; flex-direction:column; gap:1rem; }
+.cta-feat {
+  display:flex; align-items:center; gap:1rem;
+  font-size:.9375rem; color:rgba(255,255,255,.75);
+}
+.cta-feat-ico {
+  width:38px; height:38px; border-radius:var(--r-sm); flex-shrink:0;
+  background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.1);
+  display:flex; align-items:center; justify-content:center; font-size:1rem;
+}
+.cta-card {
+  background:rgba(255,255,255,.06); backdrop-filter:blur(24px);
+  border:1px solid rgba(255,255,255,.12); border-radius:var(--r-xl); padding:2.5rem;
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════════ */
+.site-footer {
+  background:#040a14; color:rgba(255,255,255,.6);
+  padding:4.5rem 0 0; border-top:1px solid rgba(255,255,255,.06);
+}
+.footer-main {
+  max-width:1160px; margin:0 auto; padding:0 2rem 3rem;
+  display:grid; grid-template-columns:2.2fr 1fr 1fr 1fr; gap:3rem;
+}
+.ft-logo { display:flex; align-items:center; gap:.75rem; margin-bottom:1rem; }
+.ft-logo .logo-mark { background:rgba(25,168,120,.25); border:1px solid rgba(25,168,120,.3); }
+.ft-logo-words { font-size:.62rem; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:rgba(255,255,255,.4); line-height:1.45; }
+.ft-logo-words strong { color:rgba(255,255,255,.75); }
+.ft-about { font-size:.875rem; line-height:1.75; color:rgba(255,255,255,.45); max-width:270px; margin-bottom:1.5rem; }
+.ft-contacts { display:flex; flex-direction:column; gap:.625rem; }
+.ft-con { display:flex; align-items:center; gap:.625rem; font-size:.875rem; color:rgba(255,255,255,.5); }
+.ft-col h5 { font-family:'Fraunces',serif; font-size:1.0625rem; color:rgba(255,255,255,.85); margin-bottom:1rem; font-weight:500; }
+.ft-col ul { list-style:none; display:flex; flex-direction:column; gap:.5rem; }
+.ft-col li { font-size:.875rem; color:rgba(255,255,255,.45); cursor:pointer; transition:color .2s; }
+.ft-col li:hover { color:rgba(255,255,255,.85); }
+.footer-bottom {
+  border-top:1px solid rgba(255,255,255,.06); padding:1.375rem 2rem;
+  display:flex; align-items:center; justify-content:space-between;
+  max-width:1160px; margin:0 auto;
+  font-size:.8125rem; color:rgba(255,255,255,.3);
+}
+.footer-bottom a { color:rgba(255,255,255,.3); transition:color .2s; }
+.footer-bottom a:hover { color:rgba(255,255,255,.65); }
+.footer-links { display:flex; gap:1.5rem; }
+
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════════ */
+.reveal { opacity:0; transform:translateY(26px); transition:opacity .65s var(--ease),transform .65s var(--ease); }
+.reveal.vis { opacity:1; transform:none; }
+.rd1 { transition-delay:.1s; }
+.rd2 { transition-delay:.2s; }
+.rd3 { transition-delay:.3s; }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media(max-width:1024px){
+  .hero-layout { grid-template-columns:1fr; gap:3.5rem; padding:5rem 2rem 4rem; }
+  .hero-left { text-align:center; display:flex; flex-direction:column; align-items:center; }
+  .hero-desc { text-align:center; }
+  .hero-right { max-width:540px; margin:0 auto; }
+  .hero-stat-card { left:-16px; }
+  .about-inner { grid-template-columns:1fr; gap:3rem; }
+  .about-img-col { order:-1; }
+  .pillars-grid { grid-template-columns:1fr; }
+  .stats-inner { grid-template-columns:repeat(2,1fr); }
+  .commitments-inner { grid-template-columns:1fr; gap:3rem; }
+  .commitments-sticky { position:static; }
+  .cta-inner { grid-template-columns:1fr; gap:3rem; }
+  .footer-main { grid-template-columns:1fr 1fr; gap:2.5rem; }
+}
+@media(max-width:768px){
+  .hdr-nav,.search-bar,.lang-sw { display:none; }
+  .mob-btn { display:flex; }
+  .hero h1 { font-size:2.5rem; }
+  .hero-letters { display:none; }
+  .stats-inner { grid-template-columns:1fr 1fr; }
+  .pillars-grid { grid-template-columns:1fr; }
+  .footer-main { grid-template-columns:1fr; }
+  .footer-bottom { flex-direction:column; gap:1rem; text-align:center; }
+}
+@media(max-width:480px){
+  .section { padding:5rem 0; }
+  .hero-cta { flex-direction:column; width:100%; }
+  .btn-green,.btn-ghost { justify-content:center; }
+  .hero-pillars { justify-content:center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ─────────────────────────── HEADER ─────────────────────────── -->
+<header class="site-header">
+  <div class="hdr-inner">
+    <a href="https://kbtu.edu.kz/en/" class="logo">
+      <img src="logo.png" alt="KBTU" class="logo-img">
+    </a>
+    <nav class="hdr-nav">
+      <a href="#" data-i18n="nav_about">About</a>
+      <a href="#" data-i18n="nav_education">Education</a>
+      <a href="#" data-i18n="nav_science">Science</a>
+      <a href="#" data-i18n="nav_admission">Admission</a>
+      <a href="#" class="active" data-i18n="nav_esg_principles">ESG Principles</a>
+      <a href="esg-competence-centre.html" data-i18n="nav_competence">Competence Center</a>
+    </nav>
+    <div class="hdr-right">
+      <div class="search-bar">
+        <input type="text" data-i18n-placeholder="search_placeholder" placeholder="Search…" aria-label="Search">
+        <button aria-label="Go">&#x2315;</button>
+      </div>
+      <div class="lang-sw">
+        <button data-lang="kz">KZ</button>
+        <button data-lang="ru">RU</button>
+        <button data-lang="en" class="on">EN</button>
+      </div>
+    </div>
+    <button class="mob-btn" id="mobBtn" aria-label="Menu" aria-expanded="false">&#9776;</button>
+  </div>
+</header>
+
+<!-- ─────────────────────────── MOBILE DRAWER ─────────────────────────── -->
+<div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <div class="drawer-panel">
+    <div class="drawer-head">
+      <span class="drawer-logo">KBTU ESG</span>
+      <button class="drawer-close" id="drawerClose" aria-label="Close menu">✕</button>
+    </div>
+    <div class="drawer-search">
+      <input type="text" data-i18n-placeholder="search_placeholder" placeholder="Search…" aria-label="Search">
+    </div>
+    <nav class="drawer-nav">
+      <a href="#" data-i18n="nav_about">About</a>
+      <a href="#" data-i18n="nav_education">Education</a>
+      <a href="#" data-i18n="nav_science">Science</a>
+      <a href="#" data-i18n="nav_admission">Admission</a>
+      <a href="#pillars" class="active" data-i18n="nav_esg_principles">ESG Principles</a>
+      <a href="esg-competence-centre.html" data-i18n="nav_competence">Competence Center</a>
+    </nav>
+    <div class="drawer-lang">
+      <button data-mob-lang="kz">KZ</button>
+      <button data-mob-lang="ru">RU</button>
+      <button data-mob-lang="en" class="on">EN</button>
+    </div>
+    <div class="drawer-cta">
+      <a href="#contact">
+        🌱 <span data-i18n="cta_btn">Explore Commitments</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<nav class="crumb" aria-label="Breadcrumb">
+  <div class="crumb-inner">
+    <a href="https://kbtu.edu.kz/en/#" data-i18n="breadcrumb_home">Home</a>
+    <span class="sep">›</span>
+    <a href="https://kbtu.edu.kz/en/about-the-university/about-us" data-i18n="breadcrumb_about">About the University</a>
+    <span class="sep">›</span>
+    <span class="cur" data-i18n="breadcrumb_current">ESG Principles</span>
+  </div>
+</nav>
+
+<!-- ─────────────────────────── HERO ─────────────────────────── -->
+<section class="hero" aria-label="ESG Principles hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-letters" aria-hidden="true"><span>E</span><span>S</span><span>G</span></div>
+  <div class="hero-layout">
+    <div class="hero-left">
+      <div class="hero-overline">
+        <span class="hero-overline-pill">KBTU</span>
+        <span data-i18n="hero_overline">Sustainable Development Strategy</span>
+      </div>
+      <h1 data-i18n="hero_h1">ESG Principles<br><em>at the Heart</em><br>of KBTU</h1>
+      <p class="hero-desc" data-i18n="hero_desc">
+        Kazakh-British Technical University is consistently implementing a sustainable development strategy based on Environmental, Social, and Governance principles — embedding these values into every aspect of university life.
+      </p>
+      <div class="hero-cta">
+        <a href="#pillars" class="btn-green"><span data-i18n="hero_cta">Explore Our Approach</span> ↓</a>
+      </div>
+      <div class="hero-pillars">
+        <div class="hero-pillar"><span class="hp-dot" style="background:var(--env-bright)"></span><span data-i18n="pillar_env">Environmental</span></div>
+        <div class="hero-pillar"><span class="hp-dot" style="background:var(--soc-bright)"></span><span data-i18n="pillar_soc">Social</span></div>
+        <div class="hero-pillar"><span class="hp-dot" style="background:var(--gov-bright)"></span><span data-i18n="pillar_gov">Governance</span></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <img src="ESG14.png" alt="ESG digital globe" class="hero-img-main">
+      <img src="ESG3.png" alt="ESG analytics team" class="hero-img-card">
+      <div class="hero-stat-card">
+        <span class="hsc-num">10+</span>
+        <span class="hsc-label" data-i18n="stat_badge_label">ESG Policies<br>Implemented</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── STATS ─────────────────────────── -->
+<div class="stats-band" aria-label="Key statistics">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <span class="stat-num"><span class="count" data-to="10">0</span><span class="stat-unit">+</span></span>
+      <div class="stat-lbl" data-i18n="stat1_lbl">ESG Policies</div>
+    </div>
+    <div class="stat-item reveal rd1">
+      <span class="stat-num"><span class="count" data-to="8">0</span></span>
+      <div class="stat-lbl" data-i18n="stat2_lbl">Strategic Commitments</div>
+    </div>
+    <div class="stat-item reveal rd2">
+      <span class="stat-num"><span class="count" data-to="3">0</span></span>
+      <div class="stat-lbl" data-i18n="stat3_lbl">ESG Pillars</div>
+    </div>
+    <div class="stat-item reveal rd3">
+      <span class="stat-num" style="font-size:2.25rem"><span style="font-size:1.5rem">№</span><span class="count" data-to="1">0</span></span>
+      <div class="stat-lbl" data-i18n="stat4_lbl">In Central Asia</div>
+    </div>
+  </div>
+</div>
+
+<!-- ─────────────────────────── ABOUT ─────────────────────────── -->
+<section class="about-section" aria-label="About KBTU ESG approach">
+  <div class="about-inner">
+    <div class="about-text reveal">
+      <div class="sec-tag" data-i18n="about_tag">Our Philosophy</div>
+      <h2 class="sec-h" data-i18n="about_h">A Comprehensive,<br>Systemic Approach</h2>
+      <p data-i18n="about_p1">KBTU's commitment to sustainability goes beyond statements. Our comprehensive approach lies in <strong>combining ESG-relevant policies with tangible achievements</strong> and clear future plans — through systematic integration of these values into all aspects of the university's activities.</p>
+      <p data-i18n="about_p2">The adoption of these principles reflects the university's commitment to contributing to a sustainable future, ensuring <strong>transparency, inclusiveness, and responsible stewardship</strong> of the environment and society.</p>
+      <p data-i18n="about_p3">KBTU implements specific, measurable initiatives that demonstrate extensive competencies and genuine leadership in the field of sustainable development not just in Kazakhstan, but across Central Asia and the CIS region.</p>
+    </div>
+    <div class="about-img-col reveal rd2">
+      <img src="ESG13.png" alt="Business professionals discussing ESG strategy" class="about-img">
+      <div class="about-accent">
+        <div class="about-accent-n">2025</div>
+        <div class="about-accent-t" data-i18n="about_accent">Active ESG<br>implementation year</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── PILLARS ─────────────────────────── -->
+<section class="section pillars-section" id="pillars" aria-label="Three ESG pillars">
+  <div class="container">
+    <div class="center reveal">
+      <div class="sec-tag" data-i18n="pillars_tag">Three Pillars</div>
+      <h2 class="sec-h" data-i18n="pillars_h">Environmental · Social · Governance</h2>
+      <p class="sec-sub" data-i18n="pillars_sub">Each pillar represents a distinct dimension of KBTU's commitment to building a responsible institution.</p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card pillar-env reveal rd1">
+        <div class="pillar-top">
+          <img src="ESG10.png" alt="Environmental" class="pillar-img">
+          <div class="pillar-overlay"><div class="pillar-icon-wrap">🌿</div></div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-label" data-i18n="pillar_env">Environmental</div>
+          <h3 data-i18n="env_h">Planet &amp; Ecology</h3>
+          <p data-i18n="env_p">KBTU pursues a green campus transformation — energy-efficient technologies, waste segregation, renewable energy, and a carbon neutrality strategy with clear targets and decarbonization roadmaps integrated across research and operations.</p>
+        </div>
+      </div>
+      <div class="pillar-card pillar-soc reveal rd2">
+        <div class="pillar-top">
+          <img src="ESG3.png" alt="Social" class="pillar-img">
+          <div class="pillar-overlay"><div class="pillar-icon-wrap">🤝</div></div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-label" data-i18n="pillar_soc">Social</div>
+          <h3 data-i18n="soc_h">People &amp; Community</h3>
+          <p data-i18n="soc_p">Through the Diversity, Equity &amp; Inclusion Policy, student and staff ESG initiatives, and the ESG Campus community, KBTU ensures equal opportunities and actively involves the entire university community in sustainability efforts.</p>
+        </div>
+      </div>
+      <div class="pillar-card pillar-gov reveal rd3">
+        <div class="pillar-top">
+          <img src="ESG12.png" alt="Governance" class="pillar-img">
+          <div class="pillar-overlay"><div class="pillar-icon-wrap">⚖️</div></div>
+        </div>
+        <div class="pillar-body">
+          <div class="pillar-label" data-i18n="pillar_gov">Governance</div>
+          <h3 data-i18n="gov_h">Integrity &amp; Transparency</h3>
+          <p data-i18n="gov_p">The Corporate Governance Code, Academic Integrity Policy, and Anti-Corruption Policy establish a framework of transparent, ethical, and accountable governance — setting a standard for responsible institutional management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── POLICIES ─────────────────────────── -->
+<section class="section policies-section" id="policies" aria-label="Key policies">
+  <div class="container">
+    <div class="center reveal">
+      <div class="sec-tag" data-i18n="policies_tag">Regulatory Framework</div>
+      <h2 class="sec-h" style="color:var(--ink)" data-i18n="policies_h">Key Policies &amp;<br>Governing Documents</h2>
+    </div>
+    <p class="policies-lead reveal" data-i18n="policies_lead">
+      To confirm its commitment to the ESG agenda, KBTU has approved and implemented a number of key regulatory documents and policies forming a robust, internationally aligned sustainability framework.
+    </p>
+    <div class="policy-list" id="policyList"></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── COMMITMENTS ─────────────────────────── -->
+<section class="commitments-section" id="commitments" aria-label="Strategic commitments">
+  <div class="commitments-inner container">
+    <div class="commitments-sticky reveal">
+      <div class="sec-tag" data-i18n="commit_tag">Strategic Commitments</div>
+      <h2 class="sec-h" data-i18n="commit_h">Evidence of<br><em>Real Action</em></h2>
+      <p class="sec-sub" data-i18n="commit_sub">Beyond policy, KBTU demonstrates its commitment through eight concrete, ongoing strategic initiatives that transform the university — and the region.</p>
+      <div class="commit-visual">
+        <img src="ESG10.png" alt="ESG digital strategy" class="commit-vis-img">
+      </div>
+    </div>
+    <div class="journey reveal rd2" id="journeyList"></div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── CTA ─────────────────────────── -->
+<section class="cta-banner" id="contact" aria-label="Contact and collaboration">
+  <div class="cta-mesh"></div>
+  <div class="cta-grid-lines"></div>
+  <div class="cta-inner">
+    <div class="cta-text reveal">
+      <div class="sec-tag" data-i18n="cta_tag">Shaping the Future Together</div>
+      <h2 class="sec-h" data-i18n="cta_h">KBTU Is Committed<br>to a <em style="font-style:italic;color:var(--env-bright)">Sustainable Future</em></h2>
+      <p class="sec-sub" data-i18n="cta_sub">These efforts aim not only to meet international standards, but also to shape a new generation of leaders capable of building a sustainable future. Explore our ESG Competence Center or reach out to collaborate.</p>
+      <div class="cta-features">
+        <div class="cta-feat"><span class="cta-feat-ico">🎓</span><span data-i18n="cta_feat1">GRI-certified training in Russian &amp; English</span></div>
+        <div class="cta-feat"><span class="cta-feat-ico">🌍</span><span data-i18n="cta_feat2">International partnerships &amp; rankings</span></div>
+        <div class="cta-feat"><span class="cta-feat-ico">♻️</span><span data-i18n="cta_feat3">Carbon neutrality &amp; green campus strategy</span></div>
+        <div class="cta-feat"><span class="cta-feat-ico">🤝</span><span data-i18n="cta_feat4">Collaboration with business, government &amp; NGOs</span></div>
+      </div>
+    </div>
+    <div class="cta-card reveal rd2">
+      <div class="commit-visual">
+        <img src="ESG12.png" alt="ESG digital strategy" class="commit-vis-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── FOOTER ─────────────────────────── -->
+<footer class="site-footer" aria-label="Site footer">
+  <div class="footer-main">
+    <div class="ft-brand">
+      <div class="ft-logo">
+        <div class="logo-mark">KB</div>
+        <div class="ft-logo-words"><strong data-i18n="ft_uni_strong">Kazakh-British</strong><span data-i18n="ft_uni_span">Technical University</span></div>
+      </div>
+      <p class="ft-about" data-i18n="ft_about">Leading technical university in Kazakhstan, driving innovation, education, and sustainable development across Central Asia.</p>
+      <div class="ft-contacts">
+        <div class="ft-con"><span>📞</span><span>+7 (727) 357 42 42</span></div>
+        <div class="ft-con"><span>✉️</span><span>esg@kbtu.kz</span></div>
+        <div class="ft-con"><span>📍</span><span data-i18n="ft_address">Almaty, Tole bi street, 59</span></div>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h5 data-i18n="ft_col1_h">Education</h5>
+      <ul>
+        <li data-i18n="ft_col1_1">Undergraduate</li>
+        <li data-i18n="ft_col1_2">Graduate</li>
+        <li data-i18n="ft_col1_3">Postgraduate</li>
+        <li data-i18n="ft_col1_4">MBA &amp; Executive</li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5 data-i18n="ft_col2_h">ESG</h5>
+      <ul>
+        <li data-i18n="ft_col2_1">ESG Principles</li>
+        <li data-i18n="ft_col2_2">Competence Center</li>
+        <li data-i18n="ft_col2_3">GRI Certification</li>
+        <li data-i18n="ft_col2_4">Green Campus</li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h5 data-i18n="ft_col3_h">University</h5>
+      <ul>
+        <li data-i18n="ft_col3_1">Admission</li>
+        <li data-i18n="ft_col3_2">Vacancies</li>
+        <li data-i18n="ft_col3_3">Procurement</li>
+        <li data-i18n="ft_col3_4">Press &amp; Media</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="ft_copy">© YEAR Kazakh-British Technical University. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="#" data-i18n="ft_privacy">Privacy Policy</a>
+      <a href="#" data-i18n="ft_terms">Terms of Use</a>
+      <a href="#" data-i18n="ft_access">Accessibility</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══════════════════════════════════════════
+   TRANSLATIONS
+═══════════════════════════════════════════ */
+const T = {
+  en: {
+    // Nav
+    nav_about: "About",
+    nav_education: "Education",
+    nav_science: "Science",
+    nav_admission: "Admission",
+    nav_esg_principles: "ESG Principles",
+    nav_competence: "Competence Center",
+    search_placeholder: "Search…",
+    // Breadcrumb
+    breadcrumb_home: "Home",
+    breadcrumb_about: "About the University",
+    breadcrumb_current: "ESG Principles",
+    // Hero
+    hero_overline: "Sustainable Development Strategy",
+    hero_h1: "ESG Principles<br><em>at the Heart</em><br>of KBTU",
+    hero_desc: "Kazakh-British Technical University is consistently implementing a sustainable development strategy based on Environmental, Social, and Governance principles — embedding these values into every aspect of university life.",
+    hero_cta: "Explore Our Approach",
+    pillar_env: "Environmental",
+    pillar_soc: "Social",
+    pillar_gov: "Governance",
+    stat_badge_label: "ESG Policies<br>Implemented",
+    // Stats
+    stat1_lbl: "ESG Policies",
+    stat2_lbl: "Strategic Commitments",
+    stat3_lbl: "ESG Pillars",
+    stat4_lbl: "In Central Asia",
+    // About
+    about_tag: "Our Philosophy",
+    about_h: "A Comprehensive,<br>Systemic Approach",
+    about_p1: "KBTU's commitment to sustainability goes beyond statements. Our comprehensive approach lies in <strong>combining ESG-relevant policies with tangible achievements</strong> and clear future plans — through systematic integration of these values into all aspects of the university's activities.",
+    about_p2: "The adoption of these principles reflects the university's commitment to contributing to a sustainable future, ensuring <strong>transparency, inclusiveness, and responsible stewardship</strong> of the environment and society.",
+    about_p3: "KBTU implements specific, measurable initiatives that demonstrate extensive competencies and genuine leadership in the field of sustainable development not just in Kazakhstan, but across Central Asia and the CIS region.",
+    about_accent: "Active ESG<br>implementation year",
+    // Pillars
+    pillars_tag: "Three Pillars",
+    pillars_h: "Environmental · Social · Governance",
+    pillars_sub: "Each pillar represents a distinct dimension of KBTU's commitment to building a responsible institution.",
+    env_h: "Planet &amp; Ecology",
+    env_p: "KBTU pursues a green campus transformation — energy-efficient technologies, waste segregation, renewable energy, and a carbon neutrality strategy with clear targets and decarbonization roadmaps integrated across research and operations.",
+    soc_h: "People &amp; Community",
+    soc_p: "Through the Diversity, Equity &amp; Inclusion Policy, student and staff ESG initiatives, and the ESG Campus community, KBTU ensures equal opportunities and actively involves the entire university community in sustainability efforts.",
+    gov_h: "Integrity &amp; Transparency",
+    gov_p: "The Corporate Governance Code, Academic Integrity Policy, and Anti-Corruption Policy establish a framework of transparent, ethical, and accountable governance — setting a standard for responsible institutional management.",
+    // Policies
+    policies_tag: "Regulatory Framework",
+    policies_h: "Key Policies &amp;<br>Governing Documents",
+    policies_lead: "To confirm its commitment to the ESG agenda, KBTU has approved and implemented a number of key regulatory documents and policies forming a robust, internationally aligned sustainability framework.",
+    // Commitments
+    commit_tag: "Strategic Commitments",
+    commit_h: "Evidence of<br><em>Real Action</em>",
+    commit_sub: "Beyond policy, KBTU demonstrates its commitment through eight concrete, ongoing strategic initiatives that transform the university — and the region.",
+    // CTA
+    cta_btn: "Explore Commitments",
+    cta_tag: "Shaping the Future Together",
+    cta_h: "KBTU Is Committed<br>to a <em style=\"font-style:italic;color:var(--env-bright)\">Sustainable Future</em>",
+    cta_sub: "These efforts aim not only to meet international standards, but also to shape a new generation of leaders capable of building a sustainable future. Explore our ESG Competence Center or reach out to collaborate.",
+    cta_feat1: "GRI-certified training in Russian &amp; English",
+    cta_feat2: "International partnerships &amp; rankings",
+    cta_feat3: "Carbon neutrality &amp; green campus strategy",
+    cta_feat4: "Collaboration with business, government &amp; NGOs",
+    // Footer
+    ft_uni_strong: "Kazakh-British",
+    ft_uni_span: "Technical University",
+    ft_about: "Leading technical university in Kazakhstan, driving innovation, education, and sustainable development across Central Asia.",
+    ft_address: "Almaty, Tole bi street, 59",
+    ft_col1_h: "Education",
+    ft_col1_1: "Undergraduate",
+    ft_col1_2: "Graduate",
+    ft_col1_3: "Postgraduate",
+    ft_col1_4: "MBA &amp; Executive",
+    ft_col2_h: "ESG",
+    ft_col2_1: "ESG Principles",
+    ft_col2_2: "Competence Center",
+    ft_col2_3: "GRI Certification",
+    ft_col2_4: "Green Campus",
+    ft_col3_h: "University",
+    ft_col3_1: "Admission",
+    ft_col3_2: "Vacancies",
+    ft_col3_3: "Procurement",
+    ft_col3_4: "Press &amp; Media",
+    ft_copy: "© YEAR Kazakh-British Technical University. All rights reserved.",
+    ft_privacy: "Privacy Policy",
+    ft_terms: "Terms of Use",
+    ft_access: "Accessibility",
+  },
+
+  ru: {
+    nav_about: "Об университете",
+    nav_education: "Образование",
+    nav_science: "Наука",
+    nav_admission: "Поступление",
+    nav_esg_principles: "ESG Принципы",
+    nav_competence: "Компетентностный центр",
+    search_placeholder: "Поиск…",
+    breadcrumb_home: "Главная",
+    breadcrumb_about: "Об университете",
+    breadcrumb_current: "ESG Принципы",
+    hero_overline: "Стратегия устойчивого развития",
+    hero_h1: "ESG Принципы<br><em>в основе</em><br>КБТУ",
+    hero_desc: "Казахстанско-Британский Технический Университет последовательно реализует стратегию устойчивого развития, основанную на принципах Экология, Социальная ответственность и Корпоративное управление — интегрируя эти ценности во все аспекты жизни университета.",
+    hero_cta: "Узнать больше",
+    pillar_env: "Экология",
+    pillar_soc: "Социальное",
+    pillar_gov: "Управление",
+    stat_badge_label: "ESG Политик<br>внедрено",
+    stat1_lbl: "ESG Политик",
+    stat2_lbl: "Стратегических обязательств",
+    stat3_lbl: "Направления ESG",
+    stat4_lbl: "В Центральной Азии",
+    about_tag: "Наша философия",
+    about_h: "Комплексный,<br>системный подход",
+    about_p1: "Приверженность КБТУ устойчивому развитию выходит за рамки деклараций. Наш комплексный подход заключается в <strong>сочетании релевантных ESG-политик с конкретными достижениями</strong> и чёткими планами на будущее — через систематическую интеграцию этих ценностей во все аспекты деятельности университета.",
+    about_p2: "Принятие этих принципов отражает приверженность университета вкладу в устойчивое будущее, обеспечивая <strong>прозрачность, инклюзивность и ответственное управление</strong> окружающей средой и обществом.",
+    about_p3: "КБТУ реализует конкретные измеримые инициативы, демонстрирующие широкие компетенции и подлинное лидерство в области устойчивого развития — не только в Казахстане, но и по всей Центральной Азии и СНГ.",
+    about_accent: "Активный год<br>реализации ESG",
+    pillars_tag: "Три направления",
+    pillars_h: "Экология · Социальное · Управление",
+    pillars_sub: "Каждое направление отражает особое измерение приверженности КБТУ созданию ответственного института.",
+    env_h: "Планета и экология",
+    env_p: "КБТУ реализует трансформацию зелёного кампуса — энергоэффективные технологии, раздельный сбор отходов, возобновляемая энергия и стратегия углеродной нейтральности с чёткими целями и дорожными картами декарбонизации.",
+    soc_h: "Люди и сообщество",
+    soc_p: "Благодаря Политике разнообразия, равенства и инклюзивности, инициативам студентов и сотрудников в области ESG, а также сообществу ESG Campus, КБТУ обеспечивает равные возможности и активно вовлекает всё университетское сообщество в деятельность по устойчивому развитию.",
+    gov_h: "Честность и прозрачность",
+    gov_p: "Кодекс корпоративного управления, Политика академической добросовестности и Антикоррупционная политика формируют основу прозрачного, этичного и подотчётного управления — устанавливая стандарт ответственного институционального управления.",
+    policies_tag: "Нормативная база",
+    policies_h: "Ключевые политики и<br>регулирующие документы",
+    policies_lead: "Для подтверждения своей приверженности ESG-повестке КБТУ утвердил и внедрил ряд ключевых нормативных документов и политик, формирующих надёжную, международно согласованную систему устойчивого развития.",
+    commit_tag: "Стратегические обязательства",
+    commit_h: "Свидетельства<br><em>реальных действий</em>",
+    commit_sub: "Помимо политик, КБТУ демонстрирует свою приверженность посредством восьми конкретных, текущих стратегических инициатив, преобразующих университет и регион.",
+    cta_btn: "Изучить обязательства",
+    cta_tag: "Формируем будущее вместе",
+    cta_h: "КБТУ привержен<br><em style=\"font-style:italic;color:var(--env-bright)\">устойчивому будущему</em>",
+    cta_sub: "Эти усилия направлены не только на соответствие международным стандартам, но и на формирование нового поколения лидеров, способных строить устойчивое будущее.",
+    cta_feat1: "Обучение с сертификатом GRI на русском и английском",
+    cta_feat2: "Международные партнёрства и рейтинги",
+    cta_feat3: "Углеродная нейтральность и стратегия зелёного кампуса",
+    cta_feat4: "Сотрудничество с бизнесом, государством и НКО",
+    ft_uni_strong: "Казахстанско-Британский",
+    ft_uni_span: "Технический университет",
+    ft_about: "Ведущий технический университет Казахстана, развивающий инновации, образование и устойчивое развитие в Центральной Азии.",
+    ft_address: "Алматы, улица Толе би, 59",
+    ft_col1_h: "Образование",
+    ft_col1_1: "Бакалавриат",
+    ft_col1_2: "Магистратура",
+    ft_col1_3: "Докторантура",
+    ft_col1_4: "MBA и Executive",
+    ft_col2_h: "ESG",
+    ft_col2_1: "ESG Принципы",
+    ft_col2_2: "Компетентностный центр",
+    ft_col2_3: "Сертификация GRI",
+    ft_col2_4: "Зелёный кампус",
+    ft_col3_h: "Университет",
+    ft_col3_1: "Поступление",
+    ft_col3_2: "Вакансии",
+    ft_col3_3: "Закупки",
+    ft_col3_4: "Пресса и медиа",
+    ft_copy: "© ГОД Казахстанско-Британский технический университет. Все права защищены.",
+    ft_privacy: "Политика конфиденциальности",
+    ft_terms: "Условия использования",
+    ft_access: "Доступность",
+  },
+
+  kz: {
+    nav_about: "Университет туралы",
+    nav_education: "Білім беру",
+    nav_science: "Ғылым",
+    nav_admission: "Түсу",
+    nav_esg_principles: "ESG Принциптері",
+    nav_competence: "Құзыреттілік орталығы",
+    search_placeholder: "Іздеу…",
+    breadcrumb_home: "Басты бет",
+    breadcrumb_about: "Университет туралы",
+    breadcrumb_current: "ESG Принциптері",
+    hero_overline: "Тұрақты даму стратегиясы",
+    hero_h1: "ESG Принциптері —<br><em>ҚБТУ-дың</em><br>негізі",
+    hero_desc: "Қазақстан-Британ Техникалық Университеті тұрақты дамудың стратегиясын жүйелі түрде іске асыруда — экология, әлеуметтік жауапкершілік және корпоративтік басқару принциптеріне негізделген бұл құндылықтарды университет өмірінің барлық аспектілеріне енгізуде.",
+    hero_cta: "Тәсілімізді зерттеу",
+    pillar_env: "Экология",
+    pillar_soc: "Әлеуметтік",
+    pillar_gov: "Басқару",
+    stat_badge_label: "ESG Саясат<br>енгізілді",
+    stat1_lbl: "ESG Саясаттар",
+    stat2_lbl: "Стратегиялық міндеттемелер",
+    stat3_lbl: "ESG Бағыттары",
+    stat4_lbl: "Орталық Азияда",
+    about_tag: "Біздің философия",
+    about_h: "Кешенді,<br>жүйелі тәсіл",
+    about_p1: "ҚБТУ-дың тұрақтылыққа берілгендігі декларациялардан асып кетеді. Біздің кешенді тәсіліміз <strong>ESG-ге қатысты саясаттарды нақты жетістіктермен үйлестіруде</strong> — университет қызметінің барлық аспектілеріне бұл құндылықтарды жүйелі интеграциялау арқылы іске асырылады.",
+    about_p2: "Бұл принциптерді қабылдау университеттің тұрақты болашаққа үлес қосу міндеттемесін, <strong>ашықтықты, инклюзивтілікті және жауапты басқаруды</strong> қамтамасыз ету бойынша ұмтылысын бейнелейді.",
+    about_p3: "ҚБТУ нақты, өлшенетін бастамаларды іске асырады — бұл тек Қазақстанда ғана емес, бүкіл Орталық Азия мен ТМД аймағында тұрақты даму саласындағы кеңдікті және шын мәніндегі көшбасшылықты дәлелдейді.",
+    about_accent: "ESG-ді белсенді<br>іске асыру жылы",
+    pillars_tag: "Үш бағыт",
+    pillars_h: "Экология · Әлеуметтік · Басқару",
+    pillars_sub: "Әрбір бағыт ҚБТУ-дың жауапты институт құруға берілгендігінің ерекше өлшемін білдіреді.",
+    env_h: "Планета және экология",
+    env_p: "ҚБТУ жасыл кампусты трансформациялауды жүзеге асырады — энергияны үнемдейтін технологиялар, қалдықтарды бөлектеп жинау, жаңартылатын энергия және нақты мақсаттары бар көміртек бейтараптығы стратегиясы.",
+    soc_h: "Адамдар мен қоғам",
+    soc_p: "Алуандылық, тең құқықтылық және инклюзивтілік саясаты, студенттер мен қызметкерлердің ESG бастамалары және ESG Campus қоғамдастығы арқылы ҚБТУ тең мүмкіндіктерді қамтамасыз етеді.",
+    gov_h: "Адалдық және ашықтық",
+    gov_p: "Корпоративтік басқару кодексі, Академиялық адалдық саясаты және Сыбайлас жемқорлыққа қарсы саясат — мөлдір, этикалық және есепті басқару шеңберін қалыптастырады.",
+    policies_tag: "Нормативтік база",
+    policies_h: "Негізгі саясаттар мен<br>реттеуші құжаттар",
+    policies_lead: "ESG күн тәртібіне берілгендігін растау үшін ҚБТУ халықаралық стандарттарға сәйкес тұрақты даму шеңберін қалыптастыратын бірқатар негізгі нормативтік құжаттар мен саясаттарды бекітіп, іске асырды.",
+    commit_tag: "Стратегиялық міндеттемелер",
+    commit_h: "Нақты<br><em>іс-қимылдың</em> дәлелі",
+    commit_sub: "Саясаттардан тыс, ҚБТУ өзінің берілгендігін университетті және аймақты өзгертетін сегіз нақты, жалғасып жатқан стратегиялық бастама арқылы дәлелдейді.",
+    cta_btn: "Міндеттемелерді зерттеу",
+    cta_tag: "Болашақты бірге қалыптастырамыз",
+    cta_h: "ҚБТУ <em style=\"font-style:italic;color:var(--env-bright)\">тұрақты болашаққа</em><br>берілген",
+    cta_sub: "Бұл күш-жігер тек халықаралық стандарттарға сай болу ғана емес, тұрақты болашақ орнатуға қабілетті жаңа буын көшбасшыларын тәрбиелеу мақсатын да көздейді.",
+    cta_feat1: "GRI сертификатталған оқыту — орыс және ағылшын тілдерінде",
+    cta_feat2: "Халықаралық серіктестіктер және рейтингтер",
+    cta_feat3: "Көміртек бейтараптығы және жасыл кампус стратегиясы",
+    cta_feat4: "Бизнес, мемлекет және үкіметтік емес ұйымдармен ынтымақтастық",
+    ft_uni_strong: "Қазақстан-Британ",
+    ft_uni_span: "Техникалық университеті",
+    ft_about: "Қазақстанның жетекші техникалық университеті — инновация, білім және тұрақты дамуды алға жылжытады.",
+    ft_address: "Алматы, Төле би көшесі, 59",
+    ft_col1_h: "Білім беру",
+    ft_col1_1: "Бакалавриат",
+    ft_col1_2: "Магистратура",
+    ft_col1_3: "Докторантура",
+    ft_col1_4: "MBA және Executive",
+    ft_col2_h: "ESG",
+    ft_col2_1: "ESG Принциптері",
+    ft_col2_2: "Құзыреттілік орталығы",
+    ft_col2_3: "GRI Сертификаттау",
+    ft_col2_4: "Жасыл кампус",
+    ft_col3_h: "Университет",
+    ft_col3_1: "Түсу",
+    ft_col3_2: "Бос орындар",
+    ft_col3_3: "Сатып алу",
+    ft_col3_4: "Баспасөз және БАҚ",
+    ft_copy: "© ЖЫЛ Қазақстан-Британ Техникалық Университеті. Барлық құқықтар қорғалған.",
+    ft_privacy: "Құпиялылық саясаты",
+    ft_terms: "Пайдалану шарттары",
+    ft_access: "Қолжетімділік",
+  }
+};
+
+/* ═══════════════════════════════════════════
+   DYNAMIC CONTENT DATA (multilingual)
+═══════════════════════════════════════════ */
+const POLICIES = {
+  en: [
+    { name:'Corporate Governance Code', detail:'Establishes the framework for transparent, accountable, and ethical governance across all levels of university management and decision-making.' },
+    { name:'Code of Business Ethics', detail:'Defines the ethical standards and professional conduct expected of all staff and administrative personnel in their business activities.' },
+    { name:'Student Code of Ethics', detail:'Outlines the values, rights, and responsibilities of students to foster a respectful, inclusive, and honest academic environment.' },
+    { name:'Academic Integrity Policy', detail:'Protects the integrity of academic work, research, and assessment by setting clear standards against plagiarism and misconduct.' },
+    { name:'Anti-Corruption Policy', detail:'Commits KBTU to zero tolerance for corruption and bribery in all administrative, financial, and academic operations.' },
+    { name:'Quality, Environmental, Health & Occupational Safety Policy', detail:'Integrates quality management with environmental protection and workplace safety standards across campus operations.' },
+    { name:'Sustainable Development Policy', detail:'Outlines the university\'s long-term goals in ecology, social responsibility, and governance, serving as the master ESG strategy document.' },
+    { name:'Sustainable Procurement Policy', detail:'Ensures the selection of suppliers and contractors based on rigorous environmental and social responsibility criteria.' },
+    { name:'Sustainable Investment Policy', detail:'Aimed at integrating ESG factors into investment decision-making processes for university assets and partnerships.' },
+    { name:'Diversity, Equity & Inclusion (DEI) Policy', detail:'Guarantees equal opportunities and respect for individual differences across the entire academic and administrative environment.' },
+  ],
+  ru: [
+    { name:'Кодекс корпоративного управления', detail:'Устанавливает рамки прозрачного, подотчётного и этичного управления на всех уровнях университетского менеджмента и принятия решений.' },
+    { name:'Кодекс деловой этики', detail:'Определяет этические стандарты и профессиональное поведение, ожидаемое от всего персонала и административных сотрудников.' },
+    { name:'Кодекс этики студентов', detail:'Описывает ценности, права и обязанности студентов для формирования уважительной, инклюзивной и честной академической среды.' },
+    { name:'Политика академической добросовестности', detail:'Защищает целостность академической работы, исследований и оценивания посредством чётких стандартов против плагиата и нарушений.' },
+    { name:'Антикоррупционная политика', detail:'Закрепляет нулевую терпимость КБТУ к коррупции и взяточничеству во всех административных, финансовых и академических операциях.' },
+    { name:'Политика в области качества, экологии, охраны здоровья и труда', detail:'Интегрирует управление качеством с охраной окружающей среды и стандартами безопасности труда в рамках кампусных операций.' },
+    { name:'Политика устойчивого развития', detail:'Определяет долгосрочные цели университета в области экологии, социальной ответственности и управления как главный документ ESG-стратегии.' },
+    { name:'Политика устойчивых закупок', detail:'Обеспечивает отбор поставщиков и подрядчиков на основе строгих критериев экологической и социальной ответственности.' },
+    { name:'Политика устойчивых инвестиций', detail:'Направлена на интеграцию факторов ESG в процессы принятия инвестиционных решений для активов и партнёрств университета.' },
+    { name:'Политика разнообразия, равенства и инклюзивности (DEI)', detail:'Гарантирует равные возможности и уважение к индивидуальным различиям во всей академической и административной среде.' },
+  ],
+  kz: [
+    { name:'Корпоративтік басқару кодексі', detail:'Университеттік басқарудың барлық деңгейлерінде мөлдір, есепті және этикалық басқарудың шеңберін белгілейді.' },
+    { name:'Іскерлік этика кодексі', detail:'Барлық қызметкерлер мен әкімшілік персоналдан күтілетін этикалық стандарттар мен кәсіби мінез-құлықты анықтайды.' },
+    { name:'Студенттер этика кодексі', detail:'Сыйластық, инклюзивтілік және адал академиялық ортаны қалыптастыру үшін студенттердің құндылықтарын, құқықтары мен міндеттерін сипаттайды.' },
+    { name:'Академиялық адалдық саясаты', detail:'Плагиатқа және теріс пайдалануға қарсы нақты стандарттар арқылы академиялық жұмыстың, зерттеудің және бағалаудың тұтастығын қорғайды.' },
+    { name:'Сыбайлас жемқорлыққа қарсы саясат', detail:'ҚБТУ-ды барлық әкімшілік, қаржылық және академиялық операцияларда жемқорлық пен пара беруге нөлдік төзімділікке міндеттейді.' },
+    { name:'Сапа, экология, денсаулық және еңбек қауіпсіздігі саясаты', detail:'Сапа менеджментін экологиялық қорғаумен және кампустық операциялардағы еңбек қауіпсіздігі стандарттарымен біріктіреді.' },
+    { name:'Тұрақты даму саясаты', detail:'Университеттің экология, әлеуметтік жауапкершілік және басқару саласындағы ұзақ мерзімді мақсаттарын ESG стратегиясының негізгі құжаты ретінде белгілейді.' },
+    { name:'Тұрақты сатып алу саясаты', detail:'Жеткізушілер мен мердігерлерді қатаң экологиялық және әлеуметтік жауапкершілік критерийлері негізінде іріктеуді қамтамасыз етеді.' },
+    { name:'Тұрақты инвестициялық саясат', detail:'Университет активтері мен серіктестіктері үшін инвестициялық шешімдер қабылдау процестеріне ESG факторларын интеграциялауға бағытталған.' },
+    { name:'Алуандылық, тең құқықтылық және инклюзивтілік (DEI) саясаты', detail:'Бүкіл академиялық және әкімшілік ортада тең мүмкіндіктерді және жеке айырмашылықтарды сыйлауды кепілдендіреді.' },
+  ]
+};
+
+const COMMITMENTS = {
+  en: [
+    { icon:'📈', title:'ESG as Strategic Development Vector', desc:'KBTU sees ESG as an integral part of its overall development strategy — not an add-on, but a core organizational principle shaping every decision.' },
+    { icon:'🎓', title:'Integration of ESG in Education & Research', desc:'ESG principles are embedded in academic programs across disciplines, and faculty are actively encouraged to pursue sustainability-focused research.' },
+    { icon:'🏛️', title:'ESG Competence Center', desc:'A unique platform for sustainable technology development, expanding collaboration, and coordinating research in ecology, social sciences, and corporate governance.' },
+    { icon:'🌱', title:'Carbon Neutrality Strategy', desc:'KBTU is consistently developing measures to reduce its carbon footprint, setting clear targets, timelines, and integrating decarbonization into research, education, and operations.' },
+    { icon:'♻️', title:'Green Campus Initiative', desc:'Projects to build environmentally sustainable infrastructure: energy-efficient technologies, waste segregation systems, and renewable energy sources across campus.' },
+    { icon:'👥', title:'Student & Staff ESG Initiatives', desc:'Platforms to actively involve students and staff in ESG activities — supporting volunteer projects in ecology, social responsibility, and inclusion through the ESG Campus community.' },
+    { icon:'🌍', title:'Collaboration & Partnerships', desc:'Active cooperation with businesses, government agencies, and international organizations to promote ESG principles and develop real-sector ESG expertise.' },
+    { icon:'📊', title:'International Rankings', desc:'KBTU strives to continually improve its positions in international sustainability and university rankings, demonstrating its commitment on a global stage.' },
+  ],
+  ru: [
+    { icon:'📈', title:'ESG как стратегический вектор развития', desc:'КБТУ рассматривает ESG как неотъемлемую часть общей стратегии развития — не дополнение, а ключевой организационный принцип, определяющий каждое решение.' },
+    { icon:'🎓', title:'Интеграция ESG в образование и исследования', desc:'Принципы ESG встроены в академические программы всех дисциплин, а преподаватели активно поощряются к проведению исследований в области устойчивого развития.' },
+    { icon:'🏛️', title:'Компетентностный центр ESG', desc:'Уникальная платформа для развития устойчивых технологий, расширения сотрудничества и координации исследований в области экологии, социальных наук и корпоративного управления.' },
+    { icon:'🌱', title:'Стратегия углеродной нейтральности', desc:'КБТУ последовательно разрабатывает меры по сокращению углеродного следа, устанавливая чёткие цели и сроки, интегрируя декарбонизацию в исследования, образование и деятельность.' },
+    { icon:'♻️', title:'Инициатива «Зелёный кампус»', desc:'Проекты по созданию экологически устойчивой инфраструктуры: энергоэффективные технологии, системы раздельного сбора отходов и возобновляемые источники энергии.' },
+    { icon:'👥', title:'ESG-инициативы студентов и сотрудников', desc:'Платформы для активного вовлечения студентов и сотрудников в ESG-деятельность — поддержка волонтёрских проектов в области экологии и инклюзивности через сообщество ESG Campus.' },
+    { icon:'🌍', title:'Сотрудничество и партнёрства', desc:'Активное взаимодействие с бизнесом, государственными органами и международными организациями для продвижения принципов ESG и развития экспертизы.' },
+    { icon:'📊', title:'Международные рейтинги', desc:'КБТУ стремится постоянно улучшать свои позиции в международных рейтингах устойчивости и университетов, демонстрируя приверженность на глобальной арене.' },
+  ],
+  kz: [
+    { icon:'📈', title:'ESG — стратегиялық даму векторы ретінде', desc:'ҚБТУ ESG-ді жалпы даму стратегиясының ажырамас бөлігі ретінде қарастырады — қосымша емес, әрбір шешімді қалыптастыратын негізгі ұйымдастырушылық принцип.' },
+    { icon:'🎓', title:'ESG-ді білім беру мен зерттеуге интеграциялау', desc:'ESG принциптері барлық пәндердің академиялық бағдарламаларына енгізілген, ал оқытушылар тұрақтылыққа бағытталған зерттеулер жүргізуге белсенді ынталандырылады.' },
+    { icon:'🏛️', title:'ESG Құзыреттілік орталығы', desc:'Тұрақты технологияларды дамыту, ынтымақтастықты кеңейту және экология, әлеуметтік ғылымдар мен корпоративтік басқару саласындағы зерттеулерді үйлестіру үшін бірегей платформа.' },
+    { icon:'🌱', title:'Көміртек бейтараптығы стратегиясы', desc:'ҚБТУ көміртек ізін азайту шараларын жүйелі түрде әзірлейді, нақты мақсаттар мен мерзімдерді белгілеп, декарбонизацияны зерттеу, білім беру және қызметке интеграциялайды.' },
+    { icon:'♻️', title:'«Жасыл кампус» бастамасы', desc:'Экологиялық тұрақты инфрақұрылым құру жобалары: энергияны үнемдейтін технологиялар, қалдықтарды бөлектеп жинау жүйелері және жаңартылатын энергия көздері.' },
+    { icon:'👥', title:'Студенттер мен қызметкерлердің ESG бастамалары', desc:'ESG Campus қоғамдастығы арқылы экология, әлеуметтік жауапкершілік және инклюзивтілік саласындағы волонтерлік жобаларды қолдай отырып, студенттер мен қызметкерлерді ESG қызметіне белсенді тарту платформалары.' },
+    { icon:'🌍', title:'Ынтымақтастық және серіктестіктер', desc:'ESG принциптерін насихаттау және нақты сектордағы ESG сараптамасын дамыту үшін бизнеспен, мемлекеттік органдармен және халықаралық ұйымдармен белсенді ынтымақтастық.' },
+    { icon:'📊', title:'Халықаралық рейтингтер', desc:'ҚБТУ тұрақтылық пен университеттер бойынша халықаралық рейтингтердегі позицияларын үздіксіз жақсартуға ұмтылып, жаһандық деңгейде берілгендігін дәлелдейді.' },
+  ]
+};
+
+/* ═══════════════════════════════════════════
+   APPLY TRANSLATIONS
+═══════════════════════════════════════════ */
+let currentLang = 'en';
+
+function applyTranslations(lang) {
+  const t = T[lang];
+  if (!t) return;
+  currentLang = lang;
+  document.documentElement.lang = lang;
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+    const key = el.getAttribute('data-i18n-placeholder');
+    if (t[key] !== undefined) el.placeholder = t[key];
+  });
+
+  // fix year in footer
+  document.querySelectorAll('[data-i18n="ft_copy"]').forEach(el => {
+    el.innerHTML = el.innerHTML.replace(/YEAR|ГОД|ЖЫЛ/g, new Date().getFullYear());
+  });
+
+  // sync lang buttons everywhere
+  document.querySelectorAll('[data-lang]').forEach(b =>
+    b.classList.toggle('on', b.getAttribute('data-lang') === lang));
+  document.querySelectorAll('[data-mob-lang]').forEach(b =>
+    b.classList.toggle('on', b.getAttribute('data-mob-lang') === lang));
+
+  // rebuild dynamic lists
+  buildPolicies(lang);
+  buildCommitments(lang);
+}
+
+/* ═══════════════════════════════════════════
+   BUILD POLICIES ACCORDION
+═══════════════════════════════════════════ */
+function buildPolicies(lang) {
+  const pList = document.getElementById('policyList');
+  pList.innerHTML = '';
+  const list = POLICIES[lang] || POLICIES.en;
+  list.forEach((p, i) => {
+    const item = document.createElement('div');
+    item.className = 'policy-item reveal' + (i % 3 === 1 ? ' rd1' : i % 3 === 2 ? ' rd2' : '');
+    item.innerHTML = `
+      <button class="policy-btn" aria-expanded="false">
+        <div class="policy-btn-left">
+          <span class="policy-num">${String(i+1).padStart(2,'0')}</span>
+          <span class="policy-name">${p.name}</span>
+        </div>
+        <svg class="policy-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </button>
+      <div class="policy-detail" style="max-height:0">
+        <div class="policy-detail-inner">${p.detail}</div>
+      </div>`;
+    pList.appendChild(item);
+
+    const btn = item.querySelector('.policy-btn');
+    const detail = item.querySelector('.policy-detail');
+    const inner = item.querySelector('.policy-detail-inner');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.policy-item.open').forEach(el => {
+        el.classList.remove('open');
+        el.querySelector('.policy-detail').style.maxHeight = '0';
+        el.querySelector('.policy-btn').setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        detail.style.maxHeight = inner.scrollHeight + 'px';
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+  // re-observe new items
+  pList.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* ═══════════════════════════════════════════
+   BUILD COMMITMENTS JOURNEY
+═══════════════════════════════════════════ */
+function buildCommitments(lang) {
+  const jList = document.getElementById('journeyList');
+  jList.innerHTML = '';
+  const list = COMMITMENTS[lang] || COMMITMENTS.en;
+  list.forEach((c, i) => {
+    const item = document.createElement('div');
+    item.className = 'journey-item reveal' + (i % 3 === 1 ? ' rd1' : i % 3 === 2 ? ' rd2' : '');
+    item.innerHTML = `
+      <div class="j-icon">${c.icon}</div>
+      <div class="j-body">
+        <div class="j-title">${c.title}</div>
+        <div class="j-desc">${c.desc}</div>
+      </div>`;
+    jList.appendChild(item);
+  });
+  jList.querySelectorAll('.reveal').forEach(el => io.observe(el));
+}
+
+/* ═══════════════════════════════════════════
+   COUNTER ANIMATION
+═══════════════════════════════════════════ */
+function animateCount(el) {
+  const target = parseInt(el.dataset.to, 10);
+  const start = performance.now();
+  const step = now => {
+    const p = Math.min((now - start) / 1200, 1);
+    const ease = 1 - Math.pow(1 - p, 3);
+    el.textContent = Math.floor(ease * target);
+    if (p < 1) requestAnimationFrame(step);
+    else el.textContent = target;
+  };
+  requestAnimationFrame(step);
+}
+
+/* ═══════════════════════════════════════════
+   INTERSECTION OBSERVER
+═══════════════════════════════════════════ */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    entry.target.classList.add('vis');
+    const counter = entry.target.querySelector('.count');
+    if (counter) animateCount(counter);
+    io.unobserve(entry.target);
+  });
+}, { threshold:0.12, rootMargin:'0px 0px -32px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* ═══════════════════════════════════════════
+   MOBILE DRAWER
+═══════════════════════════════════════════ */
+const drawer    = document.getElementById('mobileDrawer');
+const backdrop  = document.getElementById('drawerBackdrop');
+const mobBtn    = document.getElementById('mobBtn');
+const closeBtn  = document.getElementById('drawerClose');
+
+function openDrawer() {
+  drawer.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  mobBtn.setAttribute('aria-expanded', 'true');
+}
+function closeDrawer() {
+  drawer.classList.remove('open');
+  document.body.style.overflow = '';
+  mobBtn.setAttribute('aria-expanded', 'false');
+}
+
+mobBtn.addEventListener('click', openDrawer);
+closeBtn.addEventListener('click', closeDrawer);
+backdrop.addEventListener('click', closeDrawer);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+document.querySelectorAll('.drawer-nav a').forEach(a => a.addEventListener('click', closeDrawer));
+
+/* ═══════════════════════════════════════════
+   LANGUAGE SWITCHERS
+═══════════════════════════════════════════ */
+// Desktop
+document.querySelectorAll('[data-lang]').forEach(b => {
+  b.addEventListener('click', () => applyTranslations(b.getAttribute('data-lang')));
+});
+// Mobile drawer
+document.querySelectorAll('[data-mob-lang]').forEach(b => {
+  b.addEventListener('click', () => applyTranslations(b.getAttribute('data-mob-lang')));
+});
+
+/* ═══════════════════════════════════════════
+   SMOOTH ANCHORS
+═══════════════════════════════════════════ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+  });
+});
+
+/* ═══════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════ */
+document.getElementById('yr') && (document.getElementById('yr').textContent = new Date().getFullYear());
+applyTranslations('en');
+</script>
+</body>
+</html>
